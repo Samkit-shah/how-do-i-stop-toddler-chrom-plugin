@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Toddler Advice Blocker",
+    "version": "1.0",
+    "description": "Replaces searches about toddlers with a funny message.",
+    "permissions": ["tabs", "activeTab", "webNavigation"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "host_permissions": [
+      "https://*/*",
+      "http://*/*"
+    ]
+  }
+  
